@@ -393,11 +393,14 @@ p:last-child {
 
 /* ==================  title element ================ */
 .heading-line {
-  position: relative; }
+  position: relative;
+  text-align: center;
+}
   .heading-line .title-section {
     position: relative;
     display: inline-block;
     padding-right: 15px;
+    padding-left:15px ;
     background-color: #f6f7f9;
     z-index: 2; }
 
@@ -1205,7 +1208,6 @@ a[class*='card'] {
 /* ================== PAGES =================== */
 body {
   background-color: #f6f7f9; }
-/* ================== PAGES CATEGORY BANNER ==================*/
 
 /* ================ PAGES HEADER ================== */
 .section-pagetop {
@@ -1387,5 +1389,15 @@ html[dir='rtl'] .icontext .icon {
 html[dir='rtl'] .itemside .info {
   padding-right: 15px;
   padding-left: initial; }
+/* hover-image */
+.img-showcase img:nth-child(1){
+  position: absolute;
+}
+.img-showcase img{
+  transition: 0.2s ease;
+}
+.product-wrap:hover .card-product-grid .img-showcase img:nth-child(1){
+  opacity: 0;
+} 
 
 /*# sourceMappingURL=ui.css.map */

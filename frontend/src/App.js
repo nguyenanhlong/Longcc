@@ -1,15 +1,27 @@
-import Header from "./layouts/Header";
 import "./assets/sass/app.scss";
-import Footer from "./layouts/Footer";
-import Main from "./layouts/Main";
+import {  Route, Routes } from "react-router-dom";
+import LayoutSite from "./layouts/LayoutSite/Home";
+import RouterPublic from "./router/RouterPublic";
+import LayoutAdmin from "./layouts/LayoutAdmin/Index";
+import RouterPrivate from "./router/RouterPrivate";
+
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Main/>
-      <Footer/>
-    </div>
+  return (  
+      <Routes>
+        <Route path="/" element={<LayoutSite />}>
+          {RouterPublic.map(function(route,index){
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page/>}/>
+          })}
+        </Route>
+        <Route path="/admin" element={<LayoutAdmin/>}>
+          {RouterPrivate.map(function (route, index) {
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page />}/>
+          })}
+        </Route>
+      </Routes> 
   );
 }
 

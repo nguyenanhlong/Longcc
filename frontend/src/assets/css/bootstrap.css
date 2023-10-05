@@ -8433,7 +8433,7 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
 }
 .content-item .bannerlink-block--image img {
 	height:auto;
-	opacity: .66;
+	opacity:0.8;
 }
 .content-item .bannerlink-block--image:hover img{
     -webkit-transform: scale(1.1);
@@ -8467,5 +8467,29 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
 .content-item .bannerlink-block--image:hover .bannerlink-block--caption {
 	opacity: 1;
 	bottom: 10px;
+}
+/* image brand */
+.brand-item {
+	width: 100%;
+	overflow: hidden;
+	margin: 30px 0;
+}
+.brand-item .item{
+	height: auto;
+	overflow: hidden;
+	cursor: pointer;
+	background: none;
+  margin-top:auto;
+}
+.brand-item .item img {
+	height:auto;
+	opacity:0.66;
+}
+.brand-item .item:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    opacity:2;
 }
 /*# sourceMappingURL=bootstrap.css.map */
