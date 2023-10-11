@@ -1,4 +1,5 @@
 import Product from "../product/Product";
+import ProductSale from "../product/ProductSale";
 import Apparel from "./Apparel";
 import Brand from "./Brand";
 import CategoryBanner from "./CategoryBanner";
@@ -17,7 +18,7 @@ function Home() {
     <div className="container">
       <CategoryBanner/>
       <Product/>
-      <Apparel/>
+      <ProductSale/>
       <Deal/>
       <Request/>
       <Service/>

@@ -25,6 +25,10 @@ function getProductBySlug(slug) {
 function getProductAll(limit,page=1) {
     return httpAxios.get(`product_all/${limit}/${page}`);
 }
+/*function getBySale() {
+    return httpAxios.get(`getBySale`);
+}
+*/
 function getByCatId(limit, category_id){
     return httpAxios.get(`product/product_list/${limit}/${category_id}`);
 }
@@ -32,13 +36,26 @@ function getByCatId(limit, category_id){
 function update(product, id){
     return httpAxios.post("product/update/"+id, product);
 }
-
+async function getProductsByCatAndBrand(
+    parent,
+    child,
+    brands,
+    page = 1,
+    limit
+  ) {
+    return await httpAxios.post(
+      `/product/getProductsByCatAndBrand/${parent}/${child}/${page}/${limit}`,
+      brands
+    );
+  }
 function remove(id){
     return httpAxios.delete(`product/destroy/${id}`);
 }
 const productservice = {
     getByCatId:getByCatId,
     getProductAll:getProductAll,
+    /*getBySale:getBySale,*/
+    getProductsByCatAndBrand:getProductsByCatAndBrand,
     getProductBySlug:getProductBySlug,
     getByCatSlug:getByCatSlug,
     getAll:getAll,

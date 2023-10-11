@@ -65,10 +65,10 @@ function BrandList(){
                                     <img src={urlImage +'brand/'+ brand.image} width={50}/>
                                 </td>
                                 <td>
-                                    <Link className="btn btn-sm btn-info me-1" to={"/admin/brand/show/"+brand.id}>
+                                    <Link className="btn btn-sm btn-info me-1 mr-2" to={"/admin/brand/show/"+brand.id}>
                                         <FaRegEye/>
                                     </Link>
-                                    <Link className="btn btn-sm btn-primary me-1" to={"/admin/brand/update/"+brand.id}>
+                                    <Link className="btn btn-sm btn-primary me-1 mr-2" to={"/admin/brand/update/"+brand.id}>
                                         <FaEdit/>
                                     </Link>
                                         <button className="btn btn-sm btn-danger" onClick={() => brandDelete(brand.id)}><FaTrash /></button>

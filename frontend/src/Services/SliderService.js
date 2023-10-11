@@ -14,8 +14,8 @@ function create(slider){
     return httpAxios.post("slider/store", slider)
 }
 
-function update(id){
-    return httpAxios.post(`slider/update/${id}`);
+function update(slider, id){
+    return httpAxios.post(`slider/update/${id}`,slider);
 }
 function getByPosition(position){
     return httpAxios.get(`slider_list/${position}`);

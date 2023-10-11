@@ -1,85 +1,38 @@
-import { Component } from "react";
-class Brand extends Component {
-    constructor(props) {
-        super(props);
-    }
-    state = {};
-    render() {
-        return (
-            <section className="padding-bottom">
-                <header className="section-heading heading-line">
-                    <h4 className="title-section text-uppercase">Thương hiệu</h4>
-                </header>
-                <ul className="row mt-4 brand-item">
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/bandai.png")} />
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/bandai-blue.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/52toy.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/furyu.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/mihoyo.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/alter.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/sega.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/taigo.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                    <li className="col-md col-6 item">
-                        <a href="#" className="icontext">
-                            
-                            <img className="icon-brand-sm" src={require("../../../assets/images/icons/brands/megahouse.png")} />
-                            <span></span>
-                        </a>
-                    </li>
-                </ul>
-                <article className="my-4">
-                    <img src={require("../../../assets/images/banners/home_bannerfull.png")} className="w-100" />
-                </article>
+import { useEffect, useState } from "react";
+import brandservice from "../../../Services/BrandListService";
+import BrandItem from "../../../components/frontend/branditem";
 
-            </section>
-
-        );
-    }
+function Brand() {
+    const [brands, setBrand] = useState([]);
+    useEffect(function () {
+      (async function () {
+        await brandservice.getAll().then(function (result) {
+            setBrand(result.data.data);
+        });
+      })();
+    }, []);
+    return (
+        <section className="padding-bottom">
+            <header className="section-heading heading-line">
+                <h4 className="title-section text-uppercase">Thương hiệu</h4>
+            </header>
+            <div className="col-md col-6 item d-flex justify-content-center">
+                <div className="icontext">
+                <div className="row mt-4 brand-item ">
+                {brands.map(function (brand, index) {
+                        return <BrandItem brand={brand} key={index} />;
+                    })}
+                </div> 
+                    
+                </div>
+            </div>
+            <article className="my-4">
+                <img src={require("../../../assets/images/banners/home_bannerfull.png")} className="w-100" />
+            </article>
+    
+        </section>
+    
+    );
 }
+
 export default Brand;

@@ -74,9 +74,9 @@ function SliderList() {
                                     {slider.created_at}
                                 </td>
                                 <td>
-                                    <Link className="btn btn-sm btn-info me-1" to={"/admin/slider/show/" + slider.id}>
+                                    <Link className="btn btn-sm btn-info me-1 mr-2" to={"/admin/slider/show/" + slider.id}>
                                         <FaEye /> </Link>
-                                    <Link className="btn btn-sm btn-primary me-1" to={"/admin/slider/update/" + slider.id}>
+                                    <Link className="btn btn-sm btn-primary me-1 mr-2" to={"/admin/slider/update/" + slider.id}>
                                         <FaEdit /> </Link>
                                     <button className="btn btn-sm btn-danger" onClick={() => sliderDelete(slider.id)}><FaTrash /></button>
                                 </td>

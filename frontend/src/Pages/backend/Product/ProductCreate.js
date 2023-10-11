@@ -8,7 +8,6 @@ function ProductCreate() {
     const [brand_id, setBrandId] = useState('');
     const [qty,setQty] = useState('');
     const [price, setPrice] = useState('');
-    const [price_sale,setPriceSale] = useState('');
     const [detail,setDetail] = useState('');
     const [metadesc, setMetadesc] = useState('');
     const [metakey, setMetakey] = useState('');
@@ -19,13 +18,11 @@ function ProductCreate() {
         const image2 = document.querySelector("#image2");
         var product = new FormData();
             product.append ("name",name);
-            product.append ("qty",qty);
             product.append ("image", image.files[0]);
             product.append ("image2", image2.files[0]);
             product.append ("category_id",category_id);
             product.append ("brand_id",brand_id);
             product.append ("price",price);
-            product.append ("price_sale",price_sale);
             product.append ("detail",detail);
             product.append ("metadesc",metadesc);
             product.append ("metakey",metakey);
@@ -51,7 +48,7 @@ function ProductCreate() {
                             </strong>
                         </div>
                         <div className="col-md-6 d-flex justify-content-end">
-                            <button type="submit"className="btn btn-sm btn-success me-2">
+                            <button type="submit"className="btn btn-sm btn-success me-2 mr-2">
                                 Lưu
                             </button>
                             <Link to="/admin/product" className="btn btn-sm btn-info">Quay lại</Link>
@@ -67,18 +64,8 @@ function ProductCreate() {
                             </div>
 
                             <div className="md-3">
-                                <label htmlFor="qty">Số lượng</label>
-                                <input onChange={(e) => setQty(e.target.value)} type="text" name="qty" value={qty} className="form-control" />
-                            </div>
-
-                            <div className="md-3">
                                 <label htmlFor="price">Giá Gốc</label>
                                 <input onChange={(e) => setPrice(e.target.value)} type="text" name="price" value={price} className="form-control" />
-                            </div>
-
-                            <div className="md-3">
-                                <label htmlFor="price_sale">Giá Đã Giảm</label>
-                                <input onChange={(e) => setPriceSale(e.target.value)} type="text" name="price_sale" value={price_sale} className="form-control" />
                             </div>
 
                             <div className="md-3">

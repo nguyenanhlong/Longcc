@@ -17,7 +17,7 @@ import Register from "../Pages/frontend/user/Register";
 const RouterPublic =[
     {path: '/', component:Home},
     {path: '/trang-chu', component:Home},
-    {path: '/san-pham/:slug/:page', component:Item},
+    {path: '/page-listing-grid/:parent/:children/:page', component:Item},
     {path: '/product-detail/:slug', component:Detail},
     {path: '/page-profile-main', component:Profile} , 
     {path: '/page-profile-orders', component:Orders}, 

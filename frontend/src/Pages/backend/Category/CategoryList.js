@@ -72,10 +72,10 @@ function CategoryList(){
                                     {category.created_at}
                                 </td>
                                 <td>
-                                    <Link className="btn btn-sm btn-info me-1" to={"/admin/category/show/"+category.id}>
+                                    <Link className="btn btn-sm btn-info me-1 mr-2" to={"/admin/category/show/"+category.id}>
                                         <FaRegEye/>
                                     </Link>
-                                    <Link className="btn btn-sm btn-primary me-1" to={"/admin/category/update/"+category.id}>
+                                    <Link className="btn btn-sm btn-primary me-1 mr-2" to={"/admin/category/update/"+category.id}>
                                         <FaEdit/>
                                     </Link>
                                     <button className="btn btn-sm btn-danger" onClick={() => categoryDelete(category.id)}><FaTrash /></button>

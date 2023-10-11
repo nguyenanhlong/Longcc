@@ -36,7 +36,7 @@ function CategoryCreate() {
                             </strong>
                         </div>
                         <div className="col-md-6 d-flex justify-content-end">
-                            <button type="submit"className="btn btn-sm btn-success me-2">
+                            <button type="submit"className="btn btn-sm btn-success me-2 mr-2">
                                 Lưu
                             </button>
                             <Link to="/admin/category" className="btn btn-sm btn-info">Quay lại</Link>

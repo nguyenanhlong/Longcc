@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import sliderservice from "../../../Services/SliderService";
+import { urlImage } from "../../../Config";
 function SliderShow() {
 
     const {id} =useParams("id"); //"id" trong routes
@@ -22,10 +23,9 @@ function SliderShow() {
                     <div className="col-6">
                         <strong className="text-primary">CHI TIẾT SLIDER</strong></div>
                         <div className="col-md-6 d-flex justify-content-end " >
-                            <Link className="btn btn-sm btn-primary me-1" to={"/admin/slider/update/"+slider.id}>
+                            <Link className="btn btn-sm btn-primary me-1 mr-2" to={"/admin/slider/update/"+slider.id}>
                                <FaEdit/> </Link>
-                            <button className="btn btn-sm btn-danger me-2"><FaTrash/></button>
-                            <button type="submit" className="btn btn-sm btn-success me-2">Lưu</button>
+                            <button className="btn btn-sm btn-danger me-2 mr-2"><FaTrash/></button>
                             <Link to="/admin/slider" className="btn btn-sm btn-info me-2">
                                 Về danh sách
                             </Link>
@@ -66,6 +66,10 @@ function SliderShow() {
                         <tr>
                             <th>position</th>
                             <td>{slider.position}</td>
+                        </tr>
+                        <tr>
+                            <th>Hinh</th>
+                            <td><img style={{width:200}}className="img-fluid" src={urlImage+'slider/'+slider.image} alt={slider.name} /></td>
                         </tr>
                         <tr>
                             <th>Ngày tạo</th>

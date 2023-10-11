@@ -1,16 +1,9 @@
-import { Component, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import categoryservice from "../../Services/CategoryService";
+
+
+import { Link, useNavigate } from "react-router-dom";
 
 function CategoryBanner() {
-    const [categorys, setCategory] = useState([]);
-    useEffect(function () {
-        (async function () {
-            await categoryservice.getAll().then(function (result) {
-                setCategory(result.data.data);
-            });
-        })();
-    }, []);
+    let navigate = useNavigate();
     return (
         <>
             <section class="section-index-bannerlink">
@@ -19,18 +12,18 @@ function CategoryBanner() {
                         <div class="col-md-6 col-sm-6 col-xs-12 ">
                             <div class="bannerlink-block content-item" >
                                 <div class="bannerlink-block--image ">
-                                    <a href="#" aria-label="Nendoroid">
+                                    <Link to="/page-listing-grid/nendoroid/1" aria-label="Nendoroid">
                                         <img src={require("../../../assets/images/banners/categorybanner_1_img.jpg")} className="img-bg" ></img>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div class="bannerlink-block--caption">
                                     <p class="tagline">Bộ sưu tập</p>
                                     <h2 class="htitle">Nendoroid</h2>
                                     <p class="txtdesc" style={{ maxWidth: 300 }}>Dòng chibi figure được yêu thích nhất, nhiều gương mặt, thoả sức tạo dáng</p>
                                     <p class="action">
-                                        <Link to={`/san-pham/${item.slug}/1`}>
-                                            <button class="custom-btn btn-5"><span>Xem ngay <i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-                                        </Link>
+                                        <button class="custom-btn btn-5" onClick={() => navigate('/page-listing-grid/nendoroid/1')}>
+                                            <span>Xem ngay <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                        </button>
                                     </p>
 
                                 </div>
@@ -40,18 +33,18 @@ function CategoryBanner() {
                         <div class="col-md-6 col-sm-6 col-xs-12 ">
                             <div class="bannerlink-block content-item" >
                                 <div class="bannerlink-block--image ">
-                                    <a href="#" aria-label="Pop Up Parade">
+                                    <Link to="/page-listing-grid/pop-up-parade/1" aria-label="Pop Up Parade">
                                         <img src={require("../../../assets/images/banners/categorybanner_2_img.jpg")} className="img-bg" ></img>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div class="bannerlink-block--caption">
                                     <p class="tagline">Bộ sưu tập</p>
                                     <h2 class="htitle">Pop Up Parade</h2>
                                     <p class="txtdesc" style={{ maxWidth: 300 }}>Dòng scale figure kích thước sinh viên, giá tiểu học</p>
-                                    <p class="action">
-                                        <Link to={`/san-pham/${item.slug}/1`}>
-                                            <button class="custom-btn btn-5"><span>Xem ngay <i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-                                        </Link>
+                                    <p class="action">                                       
+                                        <button class="custom-btn btn-5" onClick={() => navigate('/page-listing-grid/pop-up-parade/1')}>
+                                            <span>Xem ngay <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                        </button>
                                     </p>
                                 </div>
                             </div>

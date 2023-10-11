@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import categoryservice from "../../Services/CategoryService";
 function Header() {
@@ -117,7 +117,7 @@ function Header() {
                 to="#"
               >
 
-                <i className="fa fa-bars text-muted mr-2" /> Demo pages
+                <i className="fa fa-bars text-muted mr-2" /> Trang liên kết
               </Link>
               <div className="dropdown-menu dropdown-large">
                 <nav className="row">
@@ -137,12 +137,11 @@ function Header() {
                     <Link to="/page-profile-main">Profile main</Link>
                     <Link to="/page-profile-orders">Profile orders</Link>
                     <Link to="/page-profile-seller">Profile seller</Link>
-                    <Link to="/page-profile-wishlist">
-                      Profile wishlist
-                    </Link>
+                    <Link to="/page-profile-wishlist">Profile wishlist</Link>
                     <Link to="/page-profile-setting">Profile setting</Link>
                     <Link to="/page-profile-address">Profile address</Link>
                     <Link to="rtl-page-index-1">RTL home page</Link>
+                    <Link to="/admin">Admin</Link>
                     <Link to="/page-components" target="_blank">
                       More components
                     </Link>
@@ -151,26 +150,6 @@ function Header() {
                 {/*  row end .// */}
               </div>
               {/*  dropdown-menu dropdown-large end.// */}
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="#">
-                Ready to ship
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="#">
-                Trade shows
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="#">
-                Services
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="#">
-                Sell with us
-              </Link>
             </li>
             <li className="nav-item dropdown">
               <Link
@@ -185,7 +164,7 @@ function Header() {
                 <nav className="row">
                   <div className="col">
                     {categorys.map((item, index)=>{
-                      return <Link key={index} to={`/san-pham/${item.slug}/1`}>{item.name}</Link>;
+                      return <Link key={index} to={`/page-listing-grid/${item.slug}/1`}>{item.name}</Link>;
                     })}
                   </div>
 
@@ -210,18 +189,9 @@ function Header() {
                 English
               </Link>
               <div className="dropdown-menu dropdown-menu-right">
-                <Link className="dropdown-item" to="#">
-                  Russian
-                </Link>
-                <Link className="dropdown-item" to="#">
-                  French
-                </Link>
-                <Link className="dropdown-item" to="#">
-                  Spanish
-                </Link>
-                <Link className="dropdown-item" to="#">
-                  Chinese
-                </Link>
+                    {categorys.map((item, index)=>{
+                      return <Link key={index} to={`/page-listing-grid/${item.slug}/1`}>{item.name}</Link>;
+                    })}
               </div>
             </li>
           </ul>

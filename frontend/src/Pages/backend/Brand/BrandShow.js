@@ -23,10 +23,10 @@ function BrandShow() {
                         <strong className="text-danger  ">CHI TIẾT THƯƠNG HIỆU</strong>
                     </div>
                     <div className="col-md-6 d-flex justify-content-end">
-                        <Link to="/admin/brand" className="btn btn-sm btn-outline-success me-1">
+                        <Link to="/admin/brand" className="btn btn-sm btn-outline-success me-1 mr-2">
                             Về Danh Sách
                         </Link>
-                        <Link to={"/admin/brand/update/" + brand.id} className="btn btn-sm btn-outline-primary me-1 ">
+                        <Link to={"/admin/brand/update/" + brand.id} className="btn btn-sm btn-outline-primary me-1 mr-2">
                             <FaEdit /> Sửa
                         </Link>
                         <button className="btn btn-sm btn-outline-danger me-1">

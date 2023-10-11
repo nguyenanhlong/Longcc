@@ -6,7 +6,7 @@ function Category() {
     const [categorys, setCategory] = useState([]);
     useEffect(function () {
       (async function () {
-        await categoryservice.getAll().then(function (result) {
+        await categoryservice.getCategoryByParentID(0).then(function (result) {
           setCategory(result.data.data);
         });
       })();

@@ -9,7 +9,9 @@ function getById(id){
     return httpAxios.get(`category/show/${id}`);
 
 }
-
+async function getBySlug(slug) {
+    return await httpAxios.get(`category/getBySlug/${slug}`);
+  }
 function create(category){
     return httpAxios.post("category/store", category);
 }
@@ -27,6 +29,7 @@ function remove(id){
 const categoryservice = {
     getCategoryByParentID:getCategoryByParentID,
     getAll:getAll,
+    getBySlug:getBySlug,
     getById:getById,
     create:create,
     update:update,

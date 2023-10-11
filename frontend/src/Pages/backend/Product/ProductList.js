@@ -46,11 +46,7 @@ function ProductList(){
                             <th>Tên Sản Phẩm</th>
                             <th>ID Danh mục</th>
                             <th>Slug</th>
-                            <th>Giá Gốc</th>
-                            <th>Giá Đã Giảm</th>
-                            <th>Hình</th>
-                            <th>Hình 2</th>
-                            <th>Thông tin SP</th>
+                            <th>Giá</th>
                             <th>Ngày tạo</th>
                             <th>Chức năng</th>
                             <th>ID</th>
@@ -82,25 +78,13 @@ function ProductList(){
                                     {product.price}
                                 </td>
                                 <td>
-                                    {product.price_sale}
-                                </td>
-                                <td>
-                                    {product.image}
-                                </td>
-                                <td>
-                                    {product.image2}
-                                </td>
-                                <td>
-                                    {product.detail}
-                                </td>
-                                <td>
                                     {product.created_at}
                                 </td>
                                 <td>
-                                    <Link className="btn btn-sm btn-info me-1" to={"/admin/product/show/"+product.id}>
+                                    <Link className="btn btn-sm btn-info me-1 mr-2" to={"/admin/product/show/"+product.id}>
                                         <FaRegEye/>
                                     </Link>
-                                    <Link className="btn btn-sm btn-primary me-1" to={"/admin/product/update/"+product.id}>
+                                    <Link className="btn btn-sm btn-primary me-1 mr-2" to={"/admin/product/update/"+product.id}>
                                     <FaEdit/>
                                     </Link>
                                     <button className="btn btn-sm btn-danger" onClick={() => productDelete(product.id)}><FaTrash /></button>

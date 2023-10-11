@@ -82,7 +82,7 @@ function ProductUpdate() {
                             <strong className="text-danger">THÊM DANH MỤC</strong>
                         </div>
                         <div className="col-md-6 d-flex justify-content-end">
-                            <button type="submit" className="btn btn-sm btn-success me-3">
+                            <button type="submit" className="btn btn-sm btn-success me-3 mr-2">
                                 Lưu
                             </button>
                             <Link to="/admin/product" className="btn btn-sm btn-info">

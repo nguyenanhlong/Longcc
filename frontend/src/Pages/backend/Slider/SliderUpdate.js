@@ -3,6 +3,12 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import sliderservice from "../../../Services/SliderService";
 function SliderUpdate() {
     //function CategoryList() {
+        const [name, setName] = useState('');
+        const [link, setLink] = useState('');
+        const [sort_order, setSortOrder] = useState(0);
+        const [position, setPosition] = useState(0);
+        const [status, setStatus] = useState(0);
+    
         const {id} =useParams('id');
         const navigate = useNavigate ();
         const [sliders,setSliders]=useState([]);
@@ -33,12 +39,7 @@ function SliderUpdate() {
     
     
     
-        const [name, setName] = useState('');
-        const [link, setLink] = useState('');
-        const [sort_order, setSortOrder] = useState(0);
-        const [position, setPosition] = useState(0);
-        const [status, setStatus] = useState(0);
-    
+        
     async function sliderEdit(event) {
         event.preventDefault();
         //dùng để upload file lên
@@ -75,7 +76,7 @@ function SliderUpdate() {
                         </div>
 
                         <div className="col-md-6 d-flex justify-content-end " >
-                            <button type="submit" className="btn btn-sm btn-success me-2">Lưu</button>
+                            <button type="submit" className="btn btn-sm btn-success me-2 mr-2">Lưu</button>
                             <Link to="/admin/slider" className="btn btn-sm btn-info">
                                 Về danh sách
                             </Link>

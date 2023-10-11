@@ -15,7 +15,7 @@ function CategoryUpdate() {
         (async function(){
             await categoryservice.getById(id).then(function(result)
             {
-                const tmp=result.data.data  ;
+                const tmp=result.data.category;
                 setName(tmp.name)
                 setMetakey(tmp.metakey)
                 setMetadesc(tmp.metadesc)
@@ -71,7 +71,7 @@ function CategoryUpdate() {
               <strong className="text-danger">THÊM DANH MỤC</strong>
             </div>
             <div className="col-md-6 d-flex justify-content-end">
-              <button type="submit" className="btn btn-sm btn-success me-3">
+              <button type="submit" className="btn btn-sm btn-success me-3 mr-2">
                 Lưu
               </button>
               <Link to="/admin/category" className="btn btn-sm btn-info">

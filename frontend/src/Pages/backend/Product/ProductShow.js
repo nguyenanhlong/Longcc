@@ -23,13 +23,13 @@ function ProductShow() {
                         <strong className="text-danger  ">CHI TIẾT SẢN PHẨM</strong>
                     </div>
                     <div className="col-md-6 d-flex justify-content-end">
-                        <Link to="/admin/product" className="btn btn-sm btn-outline-success me-1">
+                        <Link to="/admin/product" className="btn btn-sm btn-outline-success me-1 mr-2">
                             Về Danh Sách
                         </Link>
-                        <Link to={"/admin/product/update/" + product.id} className="btn btn-sm btn-outline-primary me-1 ">
+                        <Link to={"/admin/product/update/" + product.id} className="btn btn-sm btn-outline-primary me-1 mr-2">
                             <FaEdit /> Sửa
                         </Link>
-                        <button className="btn btn-sm btn-outline-danger me-1">
+                        <button className="btn btn-sm btn-outline-danger me-1 mr-2">
                             <FaTrash /> Xóa
                         </button>
                     </div>
@@ -67,10 +67,6 @@ function ProductShow() {
                         <tr>
                             <td>Giá Gốc</td>
                             <td>{product.price}  </td>
-                        </tr>
-                        <tr>
-                            <td>Giá Đã Giảm</td>
-                            <td>{product.price_sale}  </td>
                         </tr>
                         <tr>
                             <td>Số Lượng</td>

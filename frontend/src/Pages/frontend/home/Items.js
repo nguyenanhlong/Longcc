@@ -17,7 +17,9 @@ function Items() {
     return (
             <section className="padding-bottom-sm">
                 <header className="section-heading heading-line">
-                    <h4 className="title-section text-uppercase">Sản phẩm có sẵn</h4>
+                    <h4 className="title-section text-uppercase">
+                      {slug}
+                    </h4>
                 </header>
                 <div className="row">
                     {products.map(function (product, index) {

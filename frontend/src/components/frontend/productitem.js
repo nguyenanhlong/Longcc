@@ -11,9 +11,12 @@ function ProductItem(props) {
                 </Link>
                 <figcaption className="info-wrap">
                     <Link to="product-detail/" className="name-product">
-                        <h3 className="text-center fs-2">{props.product.name}</h3>
+                        <h5 className="text-center fs-2">{props.product.name}</h5>
                     </Link>
-                    <div className="price mt-1">{props.product.price}<sup>$</sup></div> {/* price-wrap.// */}
+                    {(()=>{
+                        return <div className="price mt-1">{props.product.price}<sup>$</sup></div>
+                    })()}
+                     {/* price-wrap.// */}
                 </figcaption>
             </div>
         </div>

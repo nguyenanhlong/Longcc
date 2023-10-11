@@ -5,7 +5,7 @@ function CategoryItem(props) {
     <div className="col-md-3 mb-3"  >
         <div className="category-item border">
             <div className="category-name p-2">
-                <Link to={"/san-pham/"+props.category.slug}>
+                <Link to={"/page-listing-grid/"+props.category.slug}>
                     <h3 className="text-center fs-4">{props.category.name}</h3>
                 </Link>
             </div>
